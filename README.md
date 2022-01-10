@@ -53,22 +53,22 @@ We write the original codes with PyTorch in this directory, which contains:
    
 <!-- - `preStroked`: `卒中.xlsx` $\to$ `2019-stroked.csv`.   -->
 <!-- - `preprocess`: `基础信息.xlsx` + `档案信息.xlsx` $\to$ `2019-merged.csv`.    -->
-- `strokeData`: `preStroked` + `preprocess` $\to$ `normalStroke.csv` $\to$ `train.csv` + `valid.csv` + `test.csv`.   
+- `strokeData`: `preStroked` + `preprocess` -> `normalStroke.csv` -> `train.csv` + `valid.csv` + `test.csv`.   
 - `strokeDataset`:   
-	- `StrokedDataset`: 风险评级 +卒中 $\to$ data + stroke\_labels + risk\_labels.   
-	- `DnnDataset`: RR $\to$ data + labels.   
-	- `QIDataset`: RR $\to$ data, index, labels.   
-	- `BinaryDataset`: 卒中 $\to$ data, labels.   
-	-  `MoEDataset`: RR + Apx $\to$ data + index + slabels + rlabels.   
+	- `StrokedDataset`: 风险评级 +卒中 -> data + stroke\_labels + risk\_labels.   
+	- `DnnDataset`: RR -> data + labels.   
+	- `QIDataset`: RR -> data, index, labels.   
+	- `BinaryDataset`: 卒中 -> data, labels.   
+	-  `MoEDataset`: RR + Apx -> data + index + slabels + rlabels.   
 - `strokeModels`: Stroke\_LR, Risk\_DNN, StrokeRistModel. (Tips: nn fixed!).  
 - `strokeUtils`: template of loss\_batch and fit
-- `logistic_regression`: **TODO** plot.     
+<!-- - `logistic_regression`: **TODO** plot.      -->
 - `strokeMain`: $l_s + l_r + l_{loc}$.
 
 #### dnn  
 
 - `dnn_binary`: 
-- `dnn_data`: `normalStroke.csv` $\to$ `dnn_train.csv` + `dnn_valid.csv` + `dnn_test.csv`.   
+- `dnn_data`: `normalStroke.csv` -> `dnn_train.csv` + `dnn_valid.csv` + `dnn_test.csv`.   
 - `dnn_risk`: implementation of stroke risk assessment with 34 input features.
 - `dnn_risk_sf`: implementation of stroke risk assessment with top 20 input features.   
 - `dnn_loop_risk`: statistical study of the stroke risk assessment.
@@ -76,7 +76,7 @@ We write the original codes with PyTorch in this directory, which contains:
 
 #### QI
 
-- `QI_data`: `normalStroke.csv` $\to$ `dnn_train.csv` + `dnn_valid.csv` + `dnn_test.csv` + `dnn_*_sf.csv` + `dnn_*_ind.csv` + `normalCategory.csv`.   
+- `QI_data`: `normalStroke.csv` -> `dnn_train.csv` + `dnn_valid.csv` + `dnn_test.csv` + `dnn_*_sf.csv` + `dnn_*_ind.csv` + `normalCategory.csv`.   
 <!-- - `QI_emb`: embedding only, no plot.    -->
 - `QI_emb_Category`: QI values are constructed "piecewisely".
 <!-- - `QI_emb_data`:  -->
@@ -98,8 +98,8 @@ Codes of the above methods applied to the MNIST handwritten digits.
 If you are using the code, please cite the following work
 ```
 @article{JingMa2021,
-  author    = {Jing Ma and Yiyang Sun and Junjie Liu and Huaxiong Huang and 			Xiaoshuang Zhou and Shixin Xu},
-  title     = {Multi-objective optimization and explanation for stroke risk 			assessment in Shanxi province},
+  author    = {Jing Ma and Yiyang Sun and Junjie Liu and Huaxiong Huang and Xiaoshuang Zhou and Shixin Xu},
+  title     = {Multi-objective optimization and explanation for stroke risk assessment in Shanxi province},
   year      = {2021},
   url       = {https://arxiv.org/abs/2107.14060},
   eprinttype = {arXiv},
